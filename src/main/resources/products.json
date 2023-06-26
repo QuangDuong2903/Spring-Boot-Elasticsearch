@@ -1,0 +1,314 @@
+[
+  {
+    "name": "Smart Phone",
+    "price": 499.99,
+    "quantity": 25,
+    "category": "Electronics",
+    "description": "A high-end smart phone with advanced features",
+    "manufacturer": "Samsung"
+  },
+  {
+    "name": "T-Shirt",
+    "price": 12.99,
+    "quantity": 50,
+    "category": "Clothing",
+    "description": "A basic cotton t-shirt in various colors",
+    "manufacturer": "Hanes"
+  },
+  {
+    "name": "Coffee Maker",
+    "price": 89.99,
+    "quantity": 10,
+    "category": "Home & Kitchen",
+    "description": "A programmable coffee maker with a built-in grinder",
+    "manufacturer": "Cuisinart"
+  },
+  {
+    "name": "Tennis Shoes",
+    "price": 79.99,
+    "quantity": 15,
+    "category": "Sports & Outdoors",
+    "description": "Lightweight tennis shoes with good traction",
+    "manufacturer": "New Balance"
+  },
+  {
+    "name": "Wireless Earbuds",
+    "price": 129.99,
+    "quantity": 20,
+    "category": "Electronics",
+    "description": "High-quality wireless earbuds with noise-cancellation",
+    "manufacturer": "Sony"
+  },
+  {
+    "name": "Hoodie",
+    "price": 29.99,
+    "quantity": 40,
+    "category": "Clothing",
+    "description": "A comfortable hoodie with a soft lining",
+    "manufacturer": "Champion"
+  },
+  {
+    "name": "Blender",
+    "price": 39.99,
+    "quantity": 12,
+    "category": "Home & Kitchen",
+    "description": "A powerful blender with multiple speed settings",
+    "manufacturer": "Oster"
+  },
+  {
+    "name": "Backpack",
+    "price": 59.99,
+    "quantity": 18,
+    "category": "Clothing",
+    "description": "A durable backpack with padded straps and multiple compartments",
+    "manufacturer": "JanSport"
+  },
+  {
+    "name": "Smart Watch",
+    "price": 199.99,
+    "quantity": 7,
+    "category": "Electronics",
+    "description": "A stylish smart watch with fitness tracking capabilities",
+    "manufacturer": "Fitbit"
+  },
+  {
+    "name": "Yoga Mat",
+    "price": 19.99,
+    "quantity": 30,
+    "category": "Sports & Outdoors",
+    "description": "A non-slip yoga mat made of eco-friendly materials",
+    "manufacturer": "Gaiam"
+  },
+  {
+    "name": "Bluetooth Speaker",
+    "price": 49.99,
+    "quantity": 22,
+    "category": "Electronics",
+    "description": "A portable speaker with good sound quality",
+    "manufacturer": "JBL"
+  },
+  {
+    "name": "Cookware Set",
+    "price": 149.99,
+    "quantity": 5,
+    "category": "Home & Kitchen",
+    "description": "A set of high-quality pots and pans with non-stick coatings",
+    "manufacturer": "T-fal"
+  },
+  {
+    "name": "Board Game",
+    "price": 24.99,
+    "quantity": 16,
+    "category": "Toys & Games",
+    "description": "A classic board game for 2-6 players",
+    "manufacturer": "Milton Bradley"
+  },
+  {
+    "name": "Laptop",
+    "price": 899.99,
+    "quantity": 3,
+    "category": "Electronics",
+    "description": "A powerful laptop with a high-resolution display",
+    "manufacturer": "HP"
+  },
+  {
+    "name": "Winter Jacket",
+    "price": 149.99,
+    "quantity": 8,
+    "category": "Clothing",
+    "description": "A warm and waterproof jacket for cold weather",
+    "manufacturer": "The North Face"
+  },
+  {
+    "name": "Acoustic Guitar",
+    "price": 299.99,
+    "quantity": 2,
+    "category": "Toys & Games",
+    "description": "A high-quality guitar for beginners or professionals",
+    "manufacturer": "Martin"
+  },
+  {
+    "name": "Air Fryer",
+    "price": 129.99,
+    "quantity": 1,
+    "category": "Home & Kitchen",
+    "description": "A versatile appliance for frying foodwith little to no oil",
+    "manufacturer": "Philips"
+  },
+  {
+    "name": "Portable Charger",
+    "price": 19.99,
+    "quantity": 35,
+    "category": "Electronics",
+    "description": "A compact power bank for charging mobile devices on the go",
+    "manufacturer": "Anker"
+  },
+  {
+    "name": "Basketball",
+    "price": 29.99,
+    "quantity": 25,
+    "category": "Sports & Outdoors",
+    "description": "An official size basketball with good grip",
+    "manufacturer": "Wilson"
+  },
+  {
+    "name": "Wireless Noise-Cancelling Headphones",
+    "price": 299.99,
+    "quantity": 15,
+    "category": "Electronics",
+    "description": "High-quality headphones with advanced noise-cancellation technology",
+    "manufacturer": "Bose"
+  },
+  {
+    "name": "Leather Messenger Bag",
+    "price": 149.99,
+    "quantity": 20,
+    "category": "Clothing",
+    "description": "A stylish and durable messenger bag made of genuine leather",
+    "manufacturer": "Fossil"
+  },
+  {
+    "name": "Programmable Slow Cooker",
+    "price": 69.99,
+    "quantity": 10,
+    "category": "Home & Kitchen",
+    "description": "A versatile slow cooker with digital controls and a timer",
+    "manufacturer": "Crock-Pot"
+  },
+  {
+    "name": "Mountain Bike",
+    "price": 899.99,
+    "quantity": 5,
+    "category": "Sports & Outdoors",
+    "description": "A high-performance mountain bike with full suspension",
+    "manufacturer": "Trek"
+  },
+  {
+    "name": "Smart Thermostat",
+    "price": 199.99,
+    "quantity": 8,
+    "category": "Home & Kitchen",
+    "description": "A programmable thermostat that learns your schedule and saves energy",
+    "manufacturer": "Nest"
+  },
+  {
+    "name": "Graphic T-Shirt",
+    "price": 24.99,
+    "quantity": 30,
+    "category": "Clothing",
+    "description": "A colorful t-shirt with a bold graphic design",
+    "manufacturer": "Threadless"
+  },
+  {
+    "name": "Digital Camera",
+    "price": 449.99,
+    "quantity": 6,
+    "category": "Electronics",
+    "description": "A compact camera with advanced features and a high-resolution sensor",
+    "manufacturer": "Sony"
+  },
+  {
+    "name": "Running Shoes",
+    "price": 119.99,
+    "quantity": 12,
+    "category": "Sports & Outdoors",
+    "description": "Lightweight running shoes with good support and cushioning",
+    "manufacturer": "Asics"
+  },
+  {
+    "name": "Stainless Steel Cookware Set",
+    "price": 199.99,
+    "quantity": 4,
+    "category": "Home & Kitchen",
+    "description": "A set of durable and high-quality pots and pans made of stainless steel",
+    "manufacturer": "All-Clad"
+  },
+  {
+    "name": "Wireless Gaming Headset",
+    "price": 149.99,
+    "quantity": 7,
+    "category": "Electronics",
+    "description": "A high-quality wireless headset with surround sound and a built-in microphone",
+    "manufacturer": "Logitech"
+  },
+  {
+    "name": "Duffle Bag",
+    "price": 79.99,
+    "quantity": 18,
+    "category": "Clothing",
+    "description": "A spacious and durable bag for travel or gym use",
+    "manufacturer": "Patagonia"
+  },
+  {
+    "name": "Stand Mixer",
+    "price": 299.99,
+    "quantity": 3,
+    "category": "Home & Kitchen",
+    "description": "A versatile mixer with multiple attachments for baking and cooking",
+    "manufacturer": "KitchenAid"
+  },
+  {
+    "name": "Fitness Tracker",
+    "price": 99.99,
+    "quantity": 15,
+    "category": "Electronics",
+    "description": "A wearable device that tracks your activity, heart rate, and sleep",
+    "manufacturer": "Garmin"
+  },
+  {
+    "name": "Camping Tent",
+    "price": 249.99,
+    "quantity": 5,
+    "category": "Sports & Outdoors",
+    "description": "A spacious and durable tent for camping and outdoor activities",
+    "manufacturer": "Coleman"
+  },
+  {
+    "name": "Denim Jeans",
+    "price": 59.99,
+    "quantity": 25,
+    "category": "Clothing",
+    "description": "A classic pair of jeans made of high-quality denim",
+    "manufacturer": "Levi's"
+  },
+  {
+    "name": "Electric Toothbrush",
+    "price": 149.99,
+    "quantity": 10,
+    "category": "Home & Kitchen",
+    "description": "A rechargeable toothbrush with multiple brushing modes and a timer",
+    "manufacturer": "Oral-B"
+  },
+  {
+    "name": "Portable Bluetooth Speaker",
+    "price": 79.99,
+    "quantity": 20,
+    "category": "Electronics",
+    "description": "A compact and wireless speaker with good sound quality and long battery life",
+    "manufacturer": "UE"
+  },
+  {
+    "name": "Ceramic Cookware Set",
+    "price": 129.99,
+    "quantity": 6,
+    "category": "Home & Kitchen",
+    "description": "A set of non-toxic and scratch-resistant pots and pans made of ceramic",
+    "manufacturer": "GreenPan"
+  },
+  {
+    "name": "Board Game Set",
+    "price": 39.99,
+    "quantity": 10,
+    "category": "Toys & Games",
+    "description": "A collection of classic board games for all ages",
+    "manufacturer": "Hasbro"
+  },
+  {
+    "name": "Folding Bike",
+    "price": 499.99,
+    "quantity": 3,
+    "category": "Sports & Outdoors",
+    "description": "A compact and lightweight bike that folds for easy storage and transport",
+    "manufacturer": "Brompton"
+  }
+]
