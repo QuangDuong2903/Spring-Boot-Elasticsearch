@@ -10,13 +10,13 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
+import org.springframework.data.elasticsearch.core.SearchHit;
 import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 import org.springframework.data.elasticsearch.core.query.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,65 +31,86 @@ public class ProductService implements IProductService {
     private ProductRepository productRepository;
 
     @Override
-    public SearchResponse searchProduct(String name, Optional<String> category, Optional<String> manufacturer) {
+    public SearchResponse searchProduct(String name, String manufacturer) {
         SearchResponse response = new SearchResponse();
         response.setFindByName(productRepository.findByName(name));
-        response.setFindByNameContaining(productRepository.findByNameContaining(name));
+        if (!name.contains(" "))
+            response.setFindByNameContaining(productRepository.findByNameContaining(name));
 
         // NativeQuery
-        if (manufacturer.isPresent()) {
-            QueryBuilder queryBuilder = QueryBuilders.matchQuery("manufacturer", manufacturer.get());
-            Query query = new NativeSearchQueryBuilder()
-                    .withQuery(queryBuilder)
-                    .build();
-            SearchHits<Product> productSearchHits = elasticsearchOperations
-                    .search(query, Product.class, IndexCoordinates.of(INDEX));
-            response.setFindByBrand(productSearchHits.getSearchHits().stream()
-                    .map(i -> i.getContent()).collect(Collectors.toList()));
-        }
+        QueryBuilder queryBuilder = QueryBuilders
+                .termQuery("name", name);
+
+        Query query = new NativeSearchQueryBuilder()
+                .withQuery(queryBuilder)
+                .build();
+
+        SearchHits<Product> nativeQueryResults = elasticsearchOperations
+                .search(query, Product.class, IndexCoordinates.of(INDEX));
+
+        response.setSearchByNativeQuery(nativeQueryResults.getSearchHits().stream()
+                .map(SearchHit::getContent).collect(Collectors.toList()));
 
         // String query
-        if (category.isPresent()) {
-            Query query = new StringQuery(
-                    "{\"match\":{\"name\":{\"query\":\""+ name + "\"}}}\"");
+        Query stringQuery = new StringQuery(
+                "{\"match\":{\"name\":{\"query\":\"" + name + "\"}}}\"");
 
-            SearchHits<Product> productSearchHits = elasticsearchOperations.search(
-                    query,
-                    Product.class,
-                    IndexCoordinates.of(INDEX));
-            response.setFindByCategory(productSearchHits.getSearchHits().stream()
-                    .map(i -> i.getContent()).collect(Collectors.toList()));
-        }
+        SearchHits<Product> stringQueryResults = elasticsearchOperations
+                .search(stringQuery, Product.class, IndexCoordinates.of(INDEX));
+
+        response.setSearchByStringQuery(stringQueryResults.getSearchHits().stream()
+                .map(SearchHit::getContent).collect(Collectors.toList()));
 
         // Criteria query
-        Criteria criteria = new Criteria("price")
-                .greaterThan(80)
-                .lessThan(100);
-        Query query = new CriteriaQuery(criteria);
-        SearchHits<Product> productSearchHits = elasticsearchOperations
-                .search(query, Product.class, IndexCoordinates.of(INDEX));
-        response.setFindByPrice(productSearchHits.getSearchHits().stream()
-                .map(i -> i.getContent()).collect(Collectors.toList()));
+        Criteria criteria = new Criteria("name").is(name).and("manufacturer").is(manufacturer);
+
+        Query criteriaQuery = new CriteriaQuery(criteria);
+
+        SearchHits<Product> criteriaQueryResults = elasticsearchOperations
+                .search(criteriaQuery, Product.class, IndexCoordinates.of(INDEX));
+
+        response.setSearchByCriteriaQuery(criteriaQueryResults.getSearchHits().stream()
+                .map(SearchHit::getContent).collect(Collectors.toList()));
+
         return response;
     }
 
     // Fuzzy search
     @Override
     public List<Product> searchProduct(String query) {
+
+//        QueryBuilder queryBuilder = QueryBuilders
+//                .fuzzyQuery("name", query)
+//                .fuzziness(Fuzziness.ONE)
+//                .prefixLength(3)
+//                .transpositions(true);
+//
+//        Query searchQuery = new NativeSearchQueryBuilder()
+//                .withFilter(queryBuilder)
+//                .build();
+//
+//        SearchHits<Product> productSearchHits = elasticsearchOperations
+//                .search(searchQuery, Product.class, IndexCoordinates.of(INDEX));
+
+
         QueryBuilder queryBuilder = QueryBuilders
                 .multiMatchQuery(query, "name", "description")
                 .fuzziness(Fuzziness.AUTO);
+
         Query searchQuery = new NativeSearchQueryBuilder()
                 .withFilter(queryBuilder)
                 .build();
+
         SearchHits<Product> productSearchHits = elasticsearchOperations
                 .search(searchQuery, Product.class, IndexCoordinates.of(INDEX));
-        return productSearchHits.getSearchHits().stream().map(i -> i.getContent()).collect(Collectors.toList());
+
+        return productSearchHits.getSearchHits().stream().map(SearchHit::getContent).collect(Collectors.toList());
     }
 
     // Wildcard search
     @Override
     public List<String> fetchSuggestion(String query) {
+
         QueryBuilder queryBuilder = QueryBuilders
                 .wildcardQuery("name", query + "*");
 
@@ -100,6 +121,7 @@ public class ProductService implements IProductService {
 
         SearchHits<Product> suggestion = elasticsearchOperations
                 .search(searchQuery, Product.class, IndexCoordinates.of(INDEX));
+
         return suggestion.getSearchHits().stream().map(i -> i.getContent().getName()).collect(Collectors.toList());
     }
 

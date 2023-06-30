@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IProductService {
-    SearchResponse searchProduct(String name, Optional<String> category, Optional<String> manufacturer);
+    SearchResponse searchProduct(String name, String manufacturer);
     List<Product> searchProduct(String query);
     List<String> fetchSuggestion(String query);
 }

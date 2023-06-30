@@ -2,6 +2,7 @@ package com.quangduong.elasticsearch.controller;
 
 import com.quangduong.elasticsearch.dto.SearchResponse;
 import com.quangduong.elasticsearch.model.Product;
+import com.quangduong.elasticsearch.repository.ProductRepository;
 import com.quangduong.elasticsearch.service.impl.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +18,10 @@ public class ProductAPI {
     @Autowired
     private ProductService productService;
 
-//    @GetMapping
-//    public ResponseEntity<SearchResponse> searchProduct(@RequestParam String name, @RequestParam Optional<String> category, @RequestParam Optional<String> manufacturer) {
-//        return ResponseEntity.ok(productService.searchProduct(name, category, manufacturer));
-//    }
+    @GetMapping("test")
+    public ResponseEntity<SearchResponse> searchProductTest(@RequestParam String name, @RequestParam String manufacturer) {
+        return ResponseEntity.ok(productService.searchProduct(name, manufacturer));
+    }
 
     @GetMapping
     public ResponseEntity<List<Product>> searchProduct(@RequestParam String query) {

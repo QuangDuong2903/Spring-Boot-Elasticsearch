@@ -10,13 +10,11 @@ public class SearchResponse {
 
     private List<Product> findByNameContaining;
 
-    private List<Product> findByManufacturerAndCategory;
+    private List<Product> searchByNativeQuery;
 
-    private List<Product> findByBrand;
+    private List<Product> searchByStringQuery;
 
-    private List<Product> findByCategory;
-
-    private List<Product> findByPrice;
+    private List<Product> searchByCriteriaQuery;
 
     public List<Product> getFindByName() {
         return findByName;
@@ -34,35 +32,27 @@ public class SearchResponse {
         this.findByNameContaining = findByNameContaining;
     }
 
-    public List<Product> getFindByManufacturerAndCategory() {
-        return findByManufacturerAndCategory;
+    public List<Product> getSearchByNativeQuery() {
+        return searchByNativeQuery;
     }
 
-    public void setFindByManufacturerAndCategory(List<Product> findByManufacturerAndCategory) {
-        this.findByManufacturerAndCategory = findByManufacturerAndCategory;
+    public void setSearchByNativeQuery(List<Product> searchByNativeQuery) {
+        this.searchByNativeQuery = searchByNativeQuery;
     }
 
-    public List<Product> getFindByBrand() {
-        return findByBrand;
+    public List<Product> getSearchByStringQuery() {
+        return searchByStringQuery;
     }
 
-    public void setFindByBrand(List<Product> findByBrand) {
-        this.findByBrand = findByBrand;
+    public void setSearchByStringQuery(List<Product> searchByStringQuery) {
+        this.searchByStringQuery = searchByStringQuery;
     }
 
-    public List<Product> getFindByCategory() {
-        return findByCategory;
+    public List<Product> getSearchByCriteriaQuery() {
+        return searchByCriteriaQuery;
     }
 
-    public void setFindByCategory(List<Product> findByCategory) {
-        this.findByCategory = findByCategory;
-    }
-
-    public List<Product> getFindByPrice() {
-        return findByPrice;
-    }
-
-    public void setFindByPrice(List<Product> findByPrice) {
-        this.findByPrice = findByPrice;
+    public void setSearchByCriteriaQuery(List<Product> searchByCriteriaQuery) {
+        this.searchByCriteriaQuery = searchByCriteriaQuery;
     }
 }
