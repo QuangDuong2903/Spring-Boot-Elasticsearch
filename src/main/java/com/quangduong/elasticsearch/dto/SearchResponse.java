@@ -8,6 +8,8 @@ public class SearchResponse {
 
     private List<Product> findByName;
 
+    private List<Product> findByManufacturer;
+
     private List<Product> findByNameContaining;
 
     private List<Product> searchByNativeQuery;
@@ -54,5 +56,13 @@ public class SearchResponse {
 
     public void setSearchByCriteriaQuery(List<Product> searchByCriteriaQuery) {
         this.searchByCriteriaQuery = searchByCriteriaQuery;
+    }
+
+    public List<Product> getFindByManufacturer() {
+        return findByManufacturer;
+    }
+
+    public void setFindByManufacturer(List<Product> findByManufacturer) {
+        this.findByManufacturer = findByManufacturer;
     }
 }

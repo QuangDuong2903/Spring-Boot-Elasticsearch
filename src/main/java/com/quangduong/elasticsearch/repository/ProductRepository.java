@@ -9,6 +9,8 @@ public interface ProductRepository extends ElasticsearchRepository<Product, Stri
 
     List<Product> findByName(String name);
 
+    List<Product> findByManufacturer(String manufacturer);
+
     List<Product> findByNameContaining(String name);
 
 }

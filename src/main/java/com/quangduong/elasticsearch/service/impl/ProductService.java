@@ -34,6 +34,7 @@ public class ProductService implements IProductService {
     public SearchResponse searchProduct(String name, String manufacturer) {
         SearchResponse response = new SearchResponse();
         response.setFindByName(productRepository.findByName(name));
+        response.setFindByManufacturer(productRepository.findByManufacturer(manufacturer));
         if (!name.contains(" "))
             response.setFindByNameContaining(productRepository.findByNameContaining(name));
 
@@ -112,7 +113,7 @@ public class ProductService implements IProductService {
     public List<String> fetchSuggestion(String query) {
 
         QueryBuilder queryBuilder = QueryBuilders
-                .wildcardQuery("name", query + "*");
+                .wildcardQuery("name", "*" + query + "*");
 
         Query searchQuery = new NativeSearchQueryBuilder()
                 .withQuery(queryBuilder)
