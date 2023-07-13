@@ -113,7 +113,7 @@ public class ProductService implements IProductService {
     public List<String> fetchSuggestion(String query) {
 
         QueryBuilder queryBuilder = QueryBuilders
-                .wildcardQuery("name", "*" + query + "*");
+                .wildcardQuery("_name", "*" + query + "*");
 
         Query searchQuery = new NativeSearchQueryBuilder()
                 .withQuery(queryBuilder)

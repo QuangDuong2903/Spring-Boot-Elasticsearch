@@ -39,9 +39,10 @@ public class Application {
             while (i != 1 && row.hasNext())
                 try {
                     String name = row.next();
+                    String subName = name.replace(' ', '_');
                     String desc = row.next();
                     String manufacturer = row.next();
-                    products.add(new Product(name, desc, manufacturer));
+                    products.add(new Product(name, subName, desc, manufacturer));
                 } catch (Exception e) {
 
                 }

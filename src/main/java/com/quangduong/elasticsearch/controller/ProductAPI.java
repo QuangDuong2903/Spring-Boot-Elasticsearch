@@ -34,6 +34,6 @@ public class ProductAPI {
 
     @GetMapping("suggestions")
     public ResponseEntity<List<String>> getSuggestion(@RequestParam String query) {
-        return ResponseEntity.ok(productService.fetchSuggestion(query));
+        return ResponseEntity.ok(productService.fetchSuggestion(query.replace(' ', '_')));
     }
 }

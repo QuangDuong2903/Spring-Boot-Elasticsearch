@@ -14,6 +14,9 @@ public class Product {
     @Field(type = FieldType.Text, name = "name")
     private String name;
 
+    @Field(type = FieldType.Text, name = "_name")
+    private String subName;
+
     @Field(type = FieldType.Text, name = "description")
     private String description;
 
@@ -52,11 +55,20 @@ public class Product {
         this.manufacturer = manufacturer;
     }
 
+    public String getSubName() {
+        return subName;
+    }
+
+    public void setSubName(String subName) {
+        this.subName = subName;
+    }
+
     public Product() {
     }
 
-    public Product(String name, String description, String manufacturer) {
+    public Product(String name, String subName, String description, String manufacturer) {
         this.name = name;
+        this.subName = subName;
         this.description = description;
         this.manufacturer = manufacturer;
     }
